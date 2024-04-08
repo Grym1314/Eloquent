@@ -1,7 +1,3 @@
 # Eloquent
 Here I will put all my eloquet's book excersices and notes
-
-Please fell free to enter and see my notes
-
-
-Today I tried to upload my project to this respository
+Please let me know if you see another way or extra material that maybe I should consider 
