@@ -8,6 +8,7 @@ const roads = [
     "Plaza de Mercado-Ayuntamiento","Tienda-Ayuntamiento"
   ];
 
+  
   function buildGraph(edges) {
     let graph = Object.create(null);
     function addEdge(from, to) {
