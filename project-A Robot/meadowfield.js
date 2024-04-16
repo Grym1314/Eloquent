@@ -13,6 +13,25 @@ const roads = [
     "Plaza de Mercado-Ayuntamiento","Tienda-Ayuntamiento"
   ];
 
+  //We’re going to turn the road list into a data structure that, for each location, tells us what can be reached from there.
+  function buildGraph(edges) {
+    let graph = Object.create(null);
+    function addEdge(from, to) {
+      if (from in graph) {
+        graph[from].push(to);
+      } else {
+        graph[from] = [to];
+      }
+    }
+    for (let [from, to] of edges.map(r => r.split("-"))) {
+      addEdge(from, to);
+      addEdge(to, from);
+    }
+    return graph;
+  }
+  
+  const roadGraph = buildGraph(roads);
+
   // to calculate robot movements 
   class VillageState {
     constructor(place, parcels) {
@@ -32,23 +51,3 @@ const roads = [
       }
     }
   }
-
-
-
-  function buildGraph(edges) {
-    let graph = Object.create(null);
-    function addEdge(from, to) {
-      if (from in graph) {
-        graph[from].push(to);
-      } else {
-        graph[from] = [to];
-      }
-    }
-    for (let [from, to] of edges.map(r => r.split("-"))) {
-      addEdge(from, to);
-      addEdge(to, from);
-    }
-    return graph;
-  }
-  
-  const roadGraph = buildGraph(roads);
