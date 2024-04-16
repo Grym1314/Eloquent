@@ -1,6 +1,8 @@
-//Readme
+//Readme: Our project in this chapter is to build an automaton, a small program that performs a task in a virtual world. 
+//Our automaton will be a mail delivery robot that collects and leaves packages.
 
 //Here we decide every possible route for this project
+//Routes:
 const roads = [
     "Casa de Leslie-Casa de Jesus","Casa de Leslie-Cabaña",
     "Casa de Leslie-Oficina de Correos","Casa de Jesus-Ayuntamiento",
