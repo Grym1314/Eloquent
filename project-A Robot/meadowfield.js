@@ -65,3 +65,19 @@ const roads = [
   // → []
   console.log(first.place);
   // → Oficina de Correos
+
+  //n robot devuelve es un objeto que contiene tanto la dirección en la que quiere moverse 
+  //como un valor de memoria que se le dará la próxima vez que se llame.
+
+  function runRobot(state, robot, memory) {
+    for (let turn = 0;; turn++) {
+      if (state.parcels.length == 0) {
+        console.log(`Terminado en ${turn} turnos`);
+        break;
+      }
+      let action = robot(state, memory);
+      state = state.move(action.direction);
+      memory = action.memory;
+      console.log(`Movido a ${action.direction}`);
+    }
+  }
