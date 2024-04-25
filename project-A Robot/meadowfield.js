@@ -52,3 +52,16 @@ const roads = [
       }
     }
   }
+
+  let first = new VillageState(
+    "Oficina de Correos",
+    [{place: "Oficina de Correos", address: "Casa de Alice"}]
+  );
+  let next = first.move("Casa de Alice");
+  
+  console.log(next.place);
+  // → Casa de Alice
+  console.log(next.parcels);
+  // → []
+  console.log(first.place);
+  // → Oficina de Correos
