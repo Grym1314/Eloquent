@@ -33,6 +33,7 @@ const roads = [
   const roadGraph = buildGraph(roads);
 
   // to calculate robot movements 
+  //Let’s calculate a new state for the situation after the move.
   class VillageState {
     constructor(place, parcels) {
       this.place = place;
@@ -51,5 +52,3 @@ const roads = [
       }
     }
   }
-
-  //Nothing for today
