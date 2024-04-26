@@ -81,3 +81,13 @@ const roads = [
       console.log(`Movido a ${action.direction}`);
     }
   }
+
+//RANDOM Pick up- this could be consider as the worst stupid option for the robot
+function randomPick(array) {
+  let choice = Math.floor(Math.random() * array.length);
+  return array[choice];
+}
+
+function randomRobot(state) {
+  return {direction: randomPick(roadGraph[state.place])};
+}
